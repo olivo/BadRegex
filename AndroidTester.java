@@ -3,7 +3,7 @@ import java.util.regex.*;
 
 class AndroidTester {
 
-    public static void testDomainName() {
+    public static void test_DOMAIN_NAME() {
 
 	Pattern p = AndroidPatterns.DOMAIN_NAME;
 
@@ -59,7 +59,8 @@ class AndroidTester {
 
     public static void main(String[] args) {
 
-	testDomainName();
+	test_DOMAIN_NAME();
+
     }
 
 }
