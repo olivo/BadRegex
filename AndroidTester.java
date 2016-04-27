@@ -3,12 +3,23 @@ import java.util.regex.*;
 
 class AndroidTester {
 
-    public static void test_DOMAIN_NAME() {
+    public static void test_DOMAIN_NAME(){
 
-	Pattern p = AndroidPatterns.DOMAIN_NAME;
+	Pattern p = AndroidPatterns.DOMAIN_NAME;	
+
+	String hostName = generate_HOST_NAME();
+
+	System.out.println(hostName.length());
+
+	Matcher m = p.matcher(hostName);
+
+	System.out.println(m.matches());
+    }
+
+    public static String generate_HOST_NAME(){
 
 	StringBuilder res = new StringBuilder();
-	
+
 	int N = 600;
 
 	StringBuilder sb;
@@ -49,18 +60,11 @@ class AndroidTester {
 
 	res.append(sb);
 
-	System.out.println(res.length());
-
-	Matcher m = p.matcher(res.toString());
-
-	System.out.println(m.matches());
-
+	return res.toString();
     }
 
     public static void main(String[] args) {
 
 	test_DOMAIN_NAME();
-
     }
-
 }
