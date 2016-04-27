@@ -16,6 +16,19 @@ class AndroidTester {
 	System.out.println(m.matches());
     }
 
+    public static void test_WEB_URL(){
+
+	Pattern p = AndroidPatterns.WEB_URL;	
+
+	String hostName = generate_HOST_NAME();
+
+	System.out.println(hostName.length());
+
+	Matcher m = p.matcher(hostName);
+
+	System.out.println(m.matches());
+    }
+
     public static String generate_HOST_NAME(){
 
 	StringBuilder res = new StringBuilder();
@@ -65,6 +78,7 @@ class AndroidTester {
 
     public static void main(String[] args) {
 
-	test_DOMAIN_NAME();
+	//test_DOMAIN_NAME();
+	test_WEB_URL();
     }
 }
